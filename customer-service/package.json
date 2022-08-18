@@ -1,0 +1,42 @@
+{
+  "name": "customer-service",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel index.js -d dist",
+    "start": "npm run build && nodemon /index.js",
+    "migrate": "db-migrate --migrations-dir ./db/migrations",
+    "migrate:up": "npm run migrate up",
+    "migrate:down": "npm run migrate down",
+    "migrate:reset": "npm run migrate reset",
+    "migrate:create": "npm run migrate create",
+    "seed:create": "npm run migrate create:seeds",
+    "seed:up": "npm run migrate up:seeds",
+    "seed:down": "npm run migrate down:seeds",
+    "seed:reset": "npm run migrate reset:seeds"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+
+  "devDependencies": {
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.18.10",
+    "@babel/preset-env": "^7.18.10",
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "bluebird": "^3.7.2",
+    "cors": "^2.8.5",
+    "db-migrate": "^0.11.13",
+    "db-migrate-pg": "^1.2.2",
+    "dotenv": "^16.0.1",
+    "express": "^4.18.1",
+    "joi": "^17.6.0",
+    "pg-monitor": "^1.4.1",
+    "pg-promise": "^10.11.1"
+  }
+}
